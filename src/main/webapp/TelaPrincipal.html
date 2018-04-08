@@ -49,16 +49,124 @@
                 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!" class="purple-text text-darken-4">one</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">two</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">one</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">two</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">one</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">two</a></li>
+                    <li><a href="#!" class="purple-text text-darken-4">Programação</a></li>
+                    <li><a href="#!" class="purple-text text-darken-4">Front-end</a></li>
+                    <li><a href="#!" class="purple-text text-darken-4">Mobile</a></li>
+                    <li><a href="#!" class="purple-text text-darken-4">Infraestrutura</a></li>
+                    <li><a href="#!" class="purple-text text-darken-4">Design & UX</a></li>
+                    <li><a href="#!" class="purple-text text-darken-4">Business</a></li>
+                    <li><a href="#!" class="purple-text text-darken-4">Assuntos Gerais</a></li>
                 </ul>
             </div>
             <div class="purple lighten-5 col s2">
-                <button class="btn waves-effect waves-light purple darken-4" type="submit" name="action">Novo Topico</button>
+                <a class="waves-effect waves-light btn modal-trigger purple darken-4" href="#modal1">Novo Topico</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="container">
+                    <ul class="collection">
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s5">
+                                    Tópico
+                                </div>
+                                <div class="col s7">
+                                    Categoria
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s5">
+                                    Alvin
+                                </div>
+                                <div class="col s7">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s5">
+                                    Alvin
+                                </div>
+                                <div class="col s7">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s5">
+                                    Alvin
+                                </div>
+                                <div class="col s7">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s5">
+                                    Alvin
+                                </div>
+                                <div class="col s7">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s5">
+                                    Alvin
+                                </div>
+                                <div class="col s7">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s5">
+                                    Alvin
+                                </div>
+                                <div class="col s7">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col s6">
+            </div>
+        </div>
+        <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
             </div>
         </div>
         
@@ -82,6 +190,25 @@
             // Or with jQuery
             $(document).ready(function(){
                 $('.dropdown-trigger').dropdown();
+                $('.modal').modal();
+            });
+            firebase.auth().onAuthStateChanged(firebaseUser =>{
+		if(firebaseUser){
+                    console.log("ta on");
+                }else{
+                    console.log("ta off");
+                    window.location.replace("Login.html");
+                }
+            });
+            // Pegando o elemento do butao sair.
+            const btnLogout = document.getElementById('buttonLogout');
+            
+            // A funçao para deslogar o usuario do firebase. com o evento de click e a funcao signOut.
+            btnLogout.addEventListener('click', e => {
+    
+                firebase.auth().signOut();
+                //O usuario e mandado para a pagina inicial.
+                window.location.replace("Login.html");
             });
         </script>
     </body>
