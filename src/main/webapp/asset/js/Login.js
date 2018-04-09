@@ -19,7 +19,7 @@ btnSignIn.addEventListener('click', e => {
     const email = Email.value;
     const pass = Password.value;
     
-    var confirma = logar(email,pass);
+    let confirma = logar(email,pass);
 });
 
 function logar(email,pass){
@@ -31,13 +31,13 @@ function logar(email,pass){
 
         localStorage.setObject("usu", []);
 
-        var user = {
+        let user = {
             email: Email.value
         };
 
-        var array = localStorage.getObject("usu");
+        let array = localStorage.getObject("usu");
         array.push(user);
-        localStorage.setObject("usu", array); 
+        localStorage.setObject("usu", array);
 
         window.location.replace("TelaPrincipal.html");
 
@@ -56,7 +56,8 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
         
         //Se ele tiver logado com sucesso ele e mandado para a pagina principal.
-        window.location.replace("/home/caio/NetBeansProjects/BancoDeDados/src/main/java/com/mycompany/bancodedados/Servelt/TelaPrincipal.java");
+        //home/caio/NetBeansProjects/BancoDeDados/src/main/java/com/mycompany/bancodedados/Servelt/TelaPrincipal.java
+        window.location.replace("TelaPrincipal.html");
     }else{
     
     }

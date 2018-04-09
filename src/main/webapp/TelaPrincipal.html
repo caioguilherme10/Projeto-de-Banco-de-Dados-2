@@ -185,7 +185,7 @@
             };
             firebase.initializeApp(config);
 	</script>
-        <script type="text/javascript" src="js/localStoragePlus.js"></script>
+        <script type="text/javascript" src="asset/js/localStoragePlus.js"></script>
         <script>
             // Or with jQuery
             $(document).ready(function(){
@@ -197,6 +197,7 @@
                     console.log("ta on");
                 }else{
                     console.log("ta off");
+                    localStorage.setObject("usu", []);
                     window.location.replace("Login.html");
                 }
             });
@@ -207,9 +208,34 @@
             btnLogout.addEventListener('click', e => {
     
                 firebase.auth().signOut();
+                localStorage.setObject("usu", []);
                 //O usuario e mandado para a pagina inicial.
                 window.location.replace("Login.html");
             });
+            
+            let array = localStorage.getObject("usu");
+            
+            const dbRefObjec = firebase.database().ref();
+            
+            const two = dbRefObjec.child('users').orderByChild('email').equalTo(array[0].email);
+
+            two.on('child_added', snap => {
+
+                document.getElementById("nome").innerHTML = snap.val().nome;
+                document.getElementById("email").innerHTML = array[0].email;
+
+                let user = {
+                    name: snap.val().nome,
+                    email: snap.val().email
+                };
+
+                array = [];
+                array.push(user);
+                localStorage.setObject("usu", array);
+                
+            });
+
+
         </script>
     </body>
 </html>
