@@ -63,25 +63,31 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s6">
+            <div class="col s12">
                 <div class="container">
                     <ul class="collection">
                         <li class="collection-item col s12">
                             <div class="row">
-                                <div class="col s5">
+                                <div class="col s4">
                                     Tópico
                                 </div>
-                                <div class="col s7">
+                                <div class="col s4">
                                     Categoria
                                 </div>
+                                <div class="col s4">
+                                    Autor
+                                </div>
                             </div>
                         </li>
                         <li class="collection-item col s12">
                             <div class="row">
-                                <div class="col s5">
+                                <div class="col s4">
                                     Alvin
                                 </div>
-                                <div class="col s7">
+                                <div class="col s4">
+                                    Alvin
+                                </div>
+                                <div class="col s4">
                                     Alvin
                                     <a href="#!" class="secondary-content">
                                         <i class="material-icons">send</i>
@@ -91,23 +97,13 @@
                         </li>
                         <li class="collection-item col s12">
                             <div class="row">
-                                <div class="col s5">
+                                <div class="col s4">
                                     Alvin
                                 </div>
-                                <div class="col s7">
-                                    Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s5">
+                                <div class="col s4">
                                     Alvin
                                 </div>
-                                <div class="col s7">
+                                <div class="col s4">
                                     Alvin
                                     <a href="#!" class="secondary-content">
                                         <i class="material-icons">send</i>
@@ -117,23 +113,13 @@
                         </li>
                         <li class="collection-item col s12">
                             <div class="row">
-                                <div class="col s5">
+                                <div class="col s4">
                                     Alvin
                                 </div>
-                                <div class="col s7">
-                                    Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s5">
+                                <div class="col s4">
                                     Alvin
                                 </div>
-                                <div class="col s7">
+                                <div class="col s4">
                                     Alvin
                                     <a href="#!" class="secondary-content">
                                         <i class="material-icons">send</i>
@@ -143,10 +129,45 @@
                         </li>
                         <li class="collection-item col s12">
                             <div class="row">
-                                <div class="col s5">
+                                <div class="col s4">
                                     Alvin
                                 </div>
-                                <div class="col s7">
+                                <div class="col s4">
+                                    Alvin
+                                </div>
+                                <div class="col s4">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s4">
+                                    Alvin
+                                </div>
+                                <div class="col s4">
+                                    Alvin
+                                </div>
+                                <div class="col s4">
+                                    Alvin
+                                    <a href="#!" class="secondary-content">
+                                        <i class="material-icons">send</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s4">
+                                    Alvin
+                                </div>
+                                <div class="col s4">
+                                    Alvin
+                                </div>
+                                <div class="col s4">
                                     Alvin
                                     <a href="#!" class="secondary-content">
                                         <i class="material-icons">send</i>
@@ -157,16 +178,38 @@
                     </ul>
                 </div>
             </div>
-            <div class="col s6">
-            </div>
         </div>
         <div id="modal1" class="modal bottom-sheet">
             <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                <form class="col s12" action="front" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="titulo" id="first_name2" type="text" class="validate">
+                            <label class="active" for="first_name2">Titulo</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <select>
+                                <option value="" disabled selected>Categoria</option>
+                                <option name="categoria" value="Programação">Programação</option>
+                                <option name="categoria" value="Front-end">Front-end</option>
+                                <option name="categoria" value="Mobile">Mobile</option>
+                                <option name="categoria" value="Infraestrutura">Infraestrutura</option>
+                                <option name="categoria" value="Design & UX">Design & UX</option>
+                                <option name="categoria" value="Business">Business</option>
+                                <option name="categoria" value="Assuntos Gerais">Assuntos Gerais</option>
+                            </select>
+                            <label>Categoria</label>
+                        </div>
+                        <div class="input-field col s10">
+                            <textarea name="conteudo" id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Textarea</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn purple darken-4 waves-effect waves-light">Confimar</button>
+                    </div>
+                    <input type="hidden" name="action" value="SalvarTopico"/>
+                </form>
             </div>
         </div>
         
@@ -189,10 +232,18 @@
         <script>
             // Or with jQuery
             $(document).ready(function(){
-                $('.dropdown-trigger').dropdown();
+               
+               $('select').formSelect();
+                
+            });
+            $(document).ready(function(){
                 $('.modal').modal();
             });
-            firebase.auth().onAuthStateChanged(firebaseUser =>{
+            $(document).ready(function(){
+                
+                $('.dropdown-trigger').dropdown();
+            });
+            /*firebase.auth().onAuthStateChanged(firebaseUser =>{
 		if(firebaseUser){
                     console.log("ta on");
                 }else{
@@ -200,7 +251,7 @@
                     localStorage.setObject("usu", []);
                     window.location.replace("Login.html");
                 }
-            });
+            });*/
             // Pegando o elemento do butao sair.
             const btnLogout = document.getElementById('buttonLogout');
             
