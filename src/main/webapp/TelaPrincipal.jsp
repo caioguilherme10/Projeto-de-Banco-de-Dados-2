@@ -31,12 +31,13 @@
         <div class="row">
             <nav>
                 <div class="nav-wrapper">
-                    <form>
+                    <form action="front" method="post" enctype="multipart/form-data">
                         <div class="input-field purple darken-4 col s10">
-                            <input id="search" type="search" required>
+                            <input name="texto" id="search" type="search" required>
                             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                             <i class="material-icons">close</i>
                         </div>
+                        <input type="hidden" name="action" value="Procurar">
                         <div class="purple lighten-5 col s2">
                             <button class="btn waves-effect waves-light purple darken-4" type="submit" name="action">Procurar</button>
                         </div>
