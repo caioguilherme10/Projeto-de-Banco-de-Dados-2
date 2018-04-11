@@ -5,10 +5,13 @@
  */
 package com.mycompany.bancodedados.Servelt;
 
+import com.mycompany.bancodedados.Dao.DaoMongo;
+import com.mycompany.bancodedados.Model.Topico;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -16,9 +19,36 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SalvarTopicoCommand implements Command{
 
+    private DaoMongo daomongo;
+    
+    public SalvarTopicoCommand() {
+
+        this.daomongo = new DaoMongo();
+    }
+    
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Topico topico = new Topico();
+        
+        String email = req.getParameter("email");
+        String nome = req.getParameter("nome");
+        String titulo = req.getParameter("titulo");
+        String categoria = req.getParameter("categoria");
+        String conteudo = req.getParameter("conteudo");
+        
+        topico.setId(new ObjectId());
+        topico.setNome(nome);
+        topico.setEmail(email);
+        topico.setCategoria(categoria);
+        topico.setConteudo(conteudo);
+        topico.setTitulo(titulo);
+        
+        daomongo.salvarTopico(topico);
+            
+        res.sendRedirect("TelaPrincipal.jsp");
+        
+        
     }
     
 }

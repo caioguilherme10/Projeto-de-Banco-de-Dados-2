@@ -1,3 +1,4 @@
+<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,13 +50,13 @@
                 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!" class="purple-text text-darken-4">Programação</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">Front-end</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">Mobile</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">Infraestrutura</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">Design & UX</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">Business</a></li>
-                    <li><a href="#!" class="purple-text text-darken-4">Assuntos Gerais</a></li>
+                    <li><a href="front?action=Programacao" class="purple-text text-darken-4">Programação</a></li>
+                    <li><a href="front?action=Frontend" class="purple-text text-darken-4">Front-end</a></li>
+                    <li><a href="front?action=Mobile" class="purple-text text-darken-4">Mobile</a></li>
+                    <li><a href="front?action=Infraestrutura" class="purple-text text-darken-4">Infraestrutura</a></li>
+                    <li><a href="front?action=Design" class="purple-text text-darken-4">Design & UX</a></li>
+                    <li><a href="front?action=Business" class="purple-text text-darken-4">Business</a></li>
+                    <li><a href="front?action=Assuntos" class="purple-text text-darken-4">Assuntos Gerais</a></li>
                 </ul>
             </div>
             <div class="purple lighten-5 col s2">
@@ -69,7 +70,7 @@
                         <li class="collection-item col s12">
                             <div class="row">
                                 <div class="col s4">
-                                    Tópico
+                                    Topico
                                 </div>
                                 <div class="col s4">
                                     Categoria
@@ -87,12 +88,15 @@
                                 <div class="col s4">
                                     Alvin
                                 </div>
-                                <div class="col s4">
+                                <div class="col s2">
                                     Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
                                 </div>
+                                <form class="col s2" action="front" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="action" value="IrParaTopico">
+                                    <input type="hidden" name="deEmail" value="${topico.email}">
+                                    <input type="hidden" name="paraEmail" value="${topico.nome}">
+                                    <input class="button" type="submit" value="Ir">
+                                </form>
                             </div>
                         </li>
                         <li class="collection-item col s12">
@@ -179,7 +183,7 @@
                 </div>
             </div>
         </div>
-        <div id="modal1" class="modal bottom-sheet">
+        <div id="modal1" class="modal">
             <div class="modal-content">
                 <form class="col s12" action="front" method="post" enctype="multipart/form-data">
                     <div class="row">
@@ -200,13 +204,16 @@
                             </select>
                             <label>Categoria</label>
                         </div>
-                        <div class="input-field col s10">
+                        <div class="input-field col s12">
                             <textarea name="conteudo" id="textarea1" class="materialize-textarea"></textarea>
                             <label for="textarea1">Textarea</label>
                         </div>
                     </div>
                     <div class="row">
                         <button class="btn purple darken-4 waves-effect waves-light">Confimar</button>
+                    </div>
+                    <div id="usuario">
+                        
                     </div>
                     <input type="hidden" name="action" value="SalvarTopico"/>
                 </form>
@@ -255,7 +262,7 @@
             // Pegando o elemento do butao sair.
             const btnLogout = document.getElementById('buttonLogout');
             
-            // A funçao para deslogar o usuario do firebase. com o evento de click e a funcao signOut.
+            // A funÃ§ao para deslogar o usuario do firebase. com o evento de click e a funcao signOut.
             btnLogout.addEventListener('click', e => {
     
                 firebase.auth().signOut();
@@ -274,9 +281,12 @@
 
                 document.getElementById("nome").innerHTML = snap.val().nome;
                 document.getElementById("email").innerHTML = array[0].email;
-
+                
+                usuario.innerHTML = "<input type='hidden' name='email' id='email1' type='text' value='"+ snap.val().email + "'/>" +
+                                    "<input type='hidden' name='nome' id='nome1' type='text' value='"+ snap.val().nome +"'/>";
+                
                 let user = {
-                    name: snap.val().nome,
+                    nome: snap.val().nome,
                     email: snap.val().email
                 };
 
@@ -285,8 +295,6 @@
                 localStorage.setObject("usu", array);
                 
             });
-
-
         </script>
     </body>
 </html>
