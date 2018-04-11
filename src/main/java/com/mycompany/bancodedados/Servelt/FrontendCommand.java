@@ -37,7 +37,7 @@ public class FrontendCommand implements Command{
         ArrayList<Topico> topicos2 = new ArrayList<>();
         
         for (Topico topico : topicos) {
-            if("Front-end".equals(topico.getCategoria())){
+            if("Frontend".equals(topico.getCategoria())){
                 topicos2.add(topico);
             } else {
                 

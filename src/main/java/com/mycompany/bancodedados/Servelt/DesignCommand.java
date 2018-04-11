@@ -37,7 +37,7 @@ public class DesignCommand implements Command{
         ArrayList<Topico> topicos2 = new ArrayList<>();
         
         for (Topico topico : topicos) {
-            if("Design & UX".equals(topico.getCategoria())){
+            if("Design UX".equals(topico.getCategoria())){
                 topicos2.add(topico);
             } else {
                 

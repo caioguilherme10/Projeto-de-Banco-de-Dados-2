@@ -68,7 +68,7 @@
                             <textarea name="conteudo" id="textarea1" class="materialize-textarea"></textarea>
                             <label for="textarea1">Textarea</label>
                         </div>
-                        <input type="hidden" name="id" value="${topico.id}">
+                        <input type="hidden" name="id" value="${Topico.id}">
                         <div id="usuario">
                         
                         </div>

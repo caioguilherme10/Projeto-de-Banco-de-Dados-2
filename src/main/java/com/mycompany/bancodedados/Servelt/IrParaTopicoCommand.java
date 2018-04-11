@@ -39,17 +39,20 @@ public class IrParaTopicoCommand implements Command{
         ObjectId id = new ObjectId(req.getParameter("id"));
         
         for (Topico topico : topicos) {
-            if(topico.getId() == id){
+            System.out.println(topico.getId());
+            if(topico.getId().equals(id)){
                 topico2 = topico;
             } else {
                 
             }
         }
         
+        
+        
         ArrayList<Topico> topicos2 = new ArrayList<>();
         
         for (Topico topico : topicos) {
-            if(topico2.getCategoria().equals(topico.getCategoria())){
+            if((topico2.getCategoria().equals(topico.getCategoria())) && (!topico2.equals(topico))){
                 topicos2.add(topico);
             } else {
                 

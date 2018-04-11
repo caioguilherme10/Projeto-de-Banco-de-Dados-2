@@ -37,7 +37,7 @@ public class ProgramacaoCommand implements Command{
         ArrayList<Topico> topicos2 = new ArrayList<>();
         
         for (Topico topico : topicos) {
-            if("Programação".equals(topico.getCategoria())){
+            if("Programacao".equals(topico.getCategoria())){
                 topicos2.add(topico);
             } else {
                 

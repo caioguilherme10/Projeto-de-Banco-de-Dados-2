@@ -116,11 +116,11 @@
                         <div class="input-field col s6">
                             <select name="categoria">
                                 <option value="" disabled selected>Categoria</option>
-                                <option value="Programação">Programação</option>
-                                <option value="Front-end">Front-end</option>
+                                <option value="Programacao">Programação</option>
+                                <option value="Frontend">Front-end</option>
                                 <option value="Mobile">Mobile</option>
                                 <option value="Infraestrutura">Infraestrutura</option>
-                                <option value="Design & UX">Design & UX</option>
+                                <option value="Design UX">Design & UX</option>
                                 <option value="Business">Business</option>
                                 <option value="Assuntos Gerais">Assuntos Gerais</option>
                             </select>
