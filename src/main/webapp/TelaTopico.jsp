@@ -1,6 +1,5 @@
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,6 +68,7 @@
                             <textarea name="conteudo" id="textarea1" class="materialize-textarea"></textarea>
                             <label for="textarea1">Textarea</label>
                         </div>
+                        <input type="hidden" name="id" value="${topico.id}">
                         <div id="usuario">
                         
                         </div>
@@ -90,10 +90,10 @@
                             <div class="col s4">
                                 Topico
                             </div>
-                            <div class="col s4">
+                            <div class="col s2">
                                 Categoria
                             </div>
-                            <div class="col s4">
+                            <div class="col s6">
                                 Autor
                             </div>
                         </div>
@@ -104,10 +104,10 @@
                                 <div class="col s4">
                                     ${topico.titulo}
                                 </div>
-                                <div class="col s3">
+                                <div class="col s2">
                                     ${topico.categoria}
                                 </div>
-                                <div class="col s3">
+                                <div class="col s4">
                                     ${topico.nome}
                                 </div>
                                 <div class="col s2">
@@ -142,7 +142,7 @@
         <script type="text/javascript" src="asset/js/localStoragePlus.js"></script>
         <script>
             
-            /*firebase.auth().onAuthStateChanged(firebaseUser =>{
+            firebase.auth().onAuthStateChanged(firebaseUser =>{
 		if(firebaseUser){
                     console.log("ta on");
                 }else{
@@ -150,7 +150,7 @@
                     localStorage.setObject("usu", []);
                     window.location.replace("Login.html");
                 }
-            });*/
+            });
             // Pegando o elemento do butao sair.
             const btnLogout = document.getElementById('buttonLogout');
             

@@ -39,7 +39,7 @@ function logar(email,pass){
         array.push(user);
         localStorage.setObject("usu", array);
 
-        window.location.replace("TelaPrincipal.html");
+        window.location.replace("TelaPrincipal.jsp");
 
     }, function(error) {
         // Handle Errors here.
@@ -57,7 +57,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
         
         //Se ele tiver logado com sucesso ele e mandado para a pagina principal.
         //home/caio/NetBeansProjects/BancoDeDados/src/main/java/com/mycompany/bancodedados/Servelt/TelaPrincipal.java
-        window.location.replace("TelaPrincipal.html");
+        window.location.replace("TelaPrincipal.jsp");
     }else{
     
     }

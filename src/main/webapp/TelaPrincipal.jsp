@@ -1,6 +1,5 @@
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -173,7 +172,7 @@
                 
                 $('.dropdown-trigger').dropdown();
             });
-            /*firebase.auth().onAuthStateChanged(firebaseUser =>{
+            firebase.auth().onAuthStateChanged(firebaseUser =>{
 		if(firebaseUser){
                     console.log("ta on");
                 }else{
@@ -181,7 +180,7 @@
                     localStorage.setObject("usu", []);
                     window.location.replace("Login.html");
                 }
-            });*/
+            });
             // Pegando o elemento do butao sair.
             const btnLogout = document.getElementById('buttonLogout');
             
