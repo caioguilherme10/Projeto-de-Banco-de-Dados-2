@@ -1,4 +1,6 @@
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -80,105 +82,26 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s4">
-                                    Alvin
+                        <c:forEach  var="topico" items="${Topicos}">
+                            <li class="collection-item col s12">
+                                <div class="row">
+                                    <div class="col s4">
+                                        ${topico.titulo}
+                                    </div>
+                                    <div class="col s4">
+                                        ${topico.categoria}
+                                    </div>
+                                    <div class="col s2">
+                                        ${topico.nome}
+                                    </div>
+                                    <form class="col s2" action="front" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="action" value="IrParaTopico">
+                                        <input type="hidden" name="id" value="${topico.id}">
+                                        <input class="button" type="submit" value="Ir">
+                                    </form>
                                 </div>
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s2">
-                                    Alvin
-                                </div>
-                                <form class="col s2" action="front" method="post" enctype="multipart/form-data">
-                                    <input type="hidden" name="action" value="IrParaTopico">
-                                    <input type="hidden" name="deEmail" value="${topico.email}">
-                                    <input type="hidden" name="paraEmail" value="${topico.nome}">
-                                    <input class="button" type="submit" value="Ir">
-                                </form>
-                            </div>
-                        </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="collection-item col s12">
-                            <div class="row">
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                </div>
-                                <div class="col s4">
-                                    Alvin
-                                    <a href="#!" class="secondary-content">
-                                        <i class="material-icons">send</i>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -192,15 +115,15 @@
                             <label class="active" for="first_name2">Titulo</label>
                         </div>
                         <div class="input-field col s6">
-                            <select>
+                            <select name="categoria">
                                 <option value="" disabled selected>Categoria</option>
-                                <option name="categoria" value="Programação">Programação</option>
-                                <option name="categoria" value="Front-end">Front-end</option>
-                                <option name="categoria" value="Mobile">Mobile</option>
-                                <option name="categoria" value="Infraestrutura">Infraestrutura</option>
-                                <option name="categoria" value="Design & UX">Design & UX</option>
-                                <option name="categoria" value="Business">Business</option>
-                                <option name="categoria" value="Assuntos Gerais">Assuntos Gerais</option>
+                                <option value="Programação">Programação</option>
+                                <option value="Front-end">Front-end</option>
+                                <option value="Mobile">Mobile</option>
+                                <option value="Infraestrutura">Infraestrutura</option>
+                                <option value="Design & UX">Design & UX</option>
+                                <option value="Business">Business</option>
+                                <option value="Assuntos Gerais">Assuntos Gerais</option>
                             </select>
                             <label>Categoria</label>
                         </div>

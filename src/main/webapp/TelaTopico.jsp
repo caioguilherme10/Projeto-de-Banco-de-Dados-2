@@ -1,3 +1,6 @@
+<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,54 +47,19 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="card white">
-                        <div class="card-action">
-                            <span class="card-title">Nome</span>
-                            <a class="right">data</a>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
+            <c:forEach  var="comentario" items="${Topico.comentario}">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card white">
+                            <div class="card-action">
+                                <span class="card-title">${comentario.nome}</span>
+                                <a class="right">${comentario.data}</a>
+                                <p>${comentario.conteudo}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="card white">
-                        <div class="card-action">
-                            <span class="card-title">Nome</span>
-                            <a class="right">data</a>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="card white">
-                        <div class="card-action">
-                            <span class="card-title">Nome</span>
-                            <a class="right">data</a>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="card white">
-                        <div class="card-action">
-                            <span class="card-title">Nome</span>
-                            <a class="right">data</a>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
             <div class="row">
                 <div>
                     <h4>Comentar</h4>
@@ -128,102 +96,26 @@
                             </div>
                         </div>
                     </li>
-                    <li class="collection-item col s12">
-                        <div class="row">
-                            <div class="col s4">
-                                I am a very simple card. I am good at containing small bits of information.
+                    <c:forEach  var="topico" items="${Topicos}">
+                        <li class="collection-item col s12">
+                            <div class="row">
+                                <div class="col s4">
+                                    ${topico.titulo}
+                                </div>
+                                <div class="col s4">
+                                    ${topico.categoria}
+                                </div>
+                                <div class="col s2">
+                                    ${topico.nome}
+                                </div>
+                                <form class="col s2" action="front" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="action" value="IrParaTopico">
+                                    <input type="hidden" name="id" value="${topico.id}">
+                                    <input class="button" type="submit" value="Ir">
+                                </form>
                             </div>
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                                <a href="#!" class="secondary-content">
-                                    <i class="material-icons">send</i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="collection-item col s12">
-                        <div class="row">
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                                <a href="#!" class="secondary-content">
-                                    <i class="material-icons">send</i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="collection-item col s12">
-                        <div class="row">
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                                <a href="#!" class="secondary-content">
-                                    <i class="material-icons">send</i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="collection-item col s12">
-                        <div class="row">
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                                <a href="#!" class="secondary-content">
-                                    <i class="material-icons">send</i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="collection-item col s12">
-                        <div class="row">
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                                <a href="#!" class="secondary-content">
-                                    <i class="material-icons">send</i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="collection-item col s12">
-                        <div class="row">
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                            </div>
-                            <div class="col s4">
-                                Alvin
-                                <a href="#!" class="secondary-content">
-                                    <i class="material-icons">send</i>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>
@@ -258,7 +150,7 @@
             // Pegando o elemento do butao sair.
             const btnLogout = document.getElementById('buttonLogout');
             
-            // A funçao para deslogar o usuario do firebase. com o evento de click e a funcao signOut.
+            // A funÃ§ao para deslogar o usuario do firebase. com o evento de click e a funcao signOut.
             btnLogout.addEventListener('click', e => {
     
                 firebase.auth().signOut();
