@@ -35,14 +35,13 @@
                 <div class="col s12">
                     <div class="card white">
                         <div class="card-content black-text">
-                            <span class="card-title">titulo</span>
-                            <p>Propriedade</p>
+                            <span class="card-title">${Topico.titulo}</span>
+                            <p>${Topico.categoria}</p>
                         </div>
                         <div class="card-action">
-                            <span class="card-title">Nome</span>
-                            <a class="right">data</a>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
+                            <span class="card-title">${Topico.nome}</span>
+                            <a class="right">${Topico.data}</a>
+                            <p>${Topico.conteudo}</p>
                         </div>
                     </div>
                 </div>
@@ -67,14 +66,17 @@
                 <form class="col s12" action="front" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <textarea name="conteudo" id="textarea1" class="materialize-textarea"></textarea>
                             <label for="textarea1">Textarea</label>
                         </div>
+                        <div id="usuario">
+                        
+                        </div>
+                        <input type="hidden" name="action" value="SalvarComentario"/>
                         <div class="row">
                             <button class="btn purple darken-4 waves-effect waves-light right">Confimar</button>
                         </div>
                     </div>
-                    <input type="hidden" name="action" value="SalvarComentario"/>
                 </form>
             </div>
         </div>
@@ -102,17 +104,19 @@
                                 <div class="col s4">
                                     ${topico.titulo}
                                 </div>
-                                <div class="col s4">
+                                <div class="col s3">
                                     ${topico.categoria}
                                 </div>
-                                <div class="col s2">
+                                <div class="col s3">
                                     ${topico.nome}
                                 </div>
-                                <form class="col s2" action="front" method="post" enctype="multipart/form-data">
-                                    <input type="hidden" name="action" value="IrParaTopico">
-                                    <input type="hidden" name="id" value="${topico.id}">
-                                    <input class="button" type="submit" value="Ir">
-                                </form>
+                                <div class="col s2">
+                                    <form action="front" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="action" value="IrParaTopico">
+                                        <input type="hidden" name="id" value="${topico.id}">
+                                        <input class="button" type="submit" value="Ir">
+                                    </form>
+                                </div>
                             </div>
                         </li>
                     </c:forEach>
@@ -163,7 +167,10 @@
             
             document.getElementById("nome").innerHTML = array[0].nome;
             document.getElementById("email").innerHTML = array[0].email;
-
+            
+            usuario.innerHTML = "<input type='hidden' name='email1' id='email1' type='text' value='"+ array[0].email + "'/>" +
+                                    "<input type='hidden' name='nome1' id='nome1' type='text' value='"+ array[0].nome +"'/>";
+            
         </script>
     </body>
 </html>

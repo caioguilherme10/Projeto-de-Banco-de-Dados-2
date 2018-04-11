@@ -31,8 +31,8 @@ public class SalvarTopicoCommand implements Command{
         
         Topico topico = new Topico();
         
-        String email = req.getParameter("email");
-        String nome = req.getParameter("nome");
+        String email = req.getParameter("email1");
+        String nome = req.getParameter("nome1");
         String titulo = req.getParameter("titulo");
         String categoria = req.getParameter("categoria");
         String conteudo = req.getParameter("conteudo");

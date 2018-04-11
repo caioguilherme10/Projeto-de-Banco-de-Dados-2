@@ -132,13 +132,13 @@
                             <label for="textarea1">Textarea</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <button class="btn purple darken-4 waves-effect waves-light">Confimar</button>
-                    </div>
                     <div id="usuario">
                         
                     </div>
                     <input type="hidden" name="action" value="SalvarTopico"/>
+                    <div class="row">
+                        <button class="btn purple darken-4 waves-effect waves-light">Confimar</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -205,8 +205,8 @@
                 document.getElementById("nome").innerHTML = snap.val().nome;
                 document.getElementById("email").innerHTML = array[0].email;
                 
-                usuario.innerHTML = "<input type='hidden' name='email' id='email1' type='text' value='"+ snap.val().email + "'/>" +
-                                    "<input type='hidden' name='nome' id='nome1' type='text' value='"+ snap.val().nome +"'/>";
+                usuario.innerHTML = "<input type='hidden' name='email1' id='email1' type='text' value='"+ snap.val().email + "'/>" +
+                                    "<input type='hidden' name='nome1' id='nome1' type='text' value='"+ snap.val().nome +"'/>";
                 
                 let user = {
                     nome: snap.val().nome,
